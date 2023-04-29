@@ -12,6 +12,10 @@ const Project = ({ project }: { project: ProjectData }) => {
   const thumbnail = project.attributes.thumbnail.data.attributes.url;
   const tags = project.attributes.tags.data;
   const slug = project.attributes.slug;
+  const imgSrc =
+    process.env.NEXT_PUBLIC_P_O_D === "development"
+      ? process.env.NEXT_PUBLIC_SERVER_BASE_URL
+      : thumbnail;
 
   const [truncatedText, setTruncatedText] = useState(desc);
 
@@ -50,7 +54,7 @@ const Project = ({ project }: { project: ProjectData }) => {
       >
         <Image
           alt="project"
-          src={`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}${thumbnail}`}
+          src={imgSrc!}
           width={544}
           height={0}
           className=" w-fit"

@@ -16,6 +16,10 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
   const image = projectData.attributes.projectImage.data.attributes.url;
   const imageHeight =
     projectData.attributes.projectImage.data.attributes.height / 2;
+  const imgSrc =
+    process.env.NEXT_PUBLIC_P_O_D === "development"
+      ? process.env.NEXT_PUBLIC_SERVER_BASE_URL
+      : image;
 
   return (
     <div>
@@ -50,7 +54,7 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
       </section>
       <section className=" bg-secBg flex justify-center pb-[100px] ">
         <Image
-          src={`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}${image}`}
+          src={imgSrc!}
           width={930}
           height={imageHeight}
           alt="project"
