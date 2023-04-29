@@ -10,7 +10,8 @@ export default async function Home() {
   );
   const { data: projectsData }: ProjectResponse = await projectsRes.json();
   const tagsRes = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/api/tags`
+    `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/api/tags`,
+    { next: { revalidate: 60 } }
   );
   const { data: tagsData }: TagsResponse = await tagsRes.json();
   return (
