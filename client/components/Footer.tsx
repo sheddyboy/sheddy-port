@@ -83,13 +83,14 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
               />
               <input
                 value={formInputs.email}
+                required={true}
                 onChange={(e) =>
                   setFormInputs((formInput) => ({
                     ...formInput,
                     email: e.target.value,
                   }))
                 }
-                type="text"
+                type="email"
                 placeholder="Email"
                 className="h-[56px] outline-none border border-[rgba(0, 0, 0, 0.3)] rounded-[5px] bg-transparent py-[8px] px-[16px] font-mulish font-normal placeholder-[rgba(0, 0, 0, 0.3)]"
               />
@@ -107,6 +108,7 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
               />
               <textarea
                 value={formInputs.message}
+                required={true}
                 onChange={(e) =>
                   setFormInputs((formInput) => ({
                     ...formInput,
@@ -138,7 +140,7 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
               alt="footer"
               src="/footer.png"
               width={510}
-              height={0}
+              height={930}
               className=" absolute left-[250px] top-[-240px]"
             />
           </motion.div>
