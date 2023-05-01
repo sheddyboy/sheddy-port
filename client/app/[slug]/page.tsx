@@ -13,13 +13,7 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
   const projectDesc = projectData.attributes.desc;
   const liveLink = projectData.attributes.link;
   const githubLink = projectData.attributes.github;
-  const image = projectData.attributes.projectImage.data.attributes.url;
-  const imageHeight =
-    projectData.attributes.projectImage.data.attributes.height / 2;
-  const imgSrc =
-    process.env.NEXT_PUBLIC_P_O_D === "development"
-      ? process.env.NEXT_PUBLIC_SERVER_BASE_URL
-      : image;
+  const image = projectData.attributes.projectImageUrl;
 
   return (
     <div>
@@ -54,9 +48,9 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
       </section>
       <section className=" bg-secBg flex justify-center pb-[100px] ">
         <Image
-          src={imgSrc!}
+          src={image}
           width={930}
-          height={imageHeight}
+          height={0}
           alt="project"
           className="relative top-[-150px]"
         />

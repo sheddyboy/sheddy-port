@@ -3,7 +3,7 @@ import Project from "@/components/Project";
 import Tags from "@/components/Tags";
 import { ProjectData, TagsData } from "@/types";
 import { motion } from "framer-motion";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const MyWork = ({
   projects,

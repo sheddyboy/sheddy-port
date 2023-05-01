@@ -3,8 +3,15 @@ import Button from "@/components/Button";
 import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 const Hero = () => {
+  const [text, helper] = useTypewriter({
+    words: ["Frontend", "React", "MERN", "Webflow"],
+    loop: true,
+    typeSpeed: 200,
+    delaySpeed: 2500,
+  });
   const parentVariant: Variants = {
     initial: { opacity: 0 },
     animate: {
@@ -37,7 +44,9 @@ const Hero = () => {
           <br />a
           <span className=" font-semibold text-pryText">
             {" "}
-            Frontend Developer
+            {text}
+            <Cursor />
+            Developer
           </span>
         </motion.h1>
         <div className="flex">
