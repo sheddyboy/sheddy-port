@@ -37,13 +37,12 @@ const Hero = () => {
             y: "0px",
             transition: { delay: 0.3, duration: 0.7 },
           }}
-          className=" text-6xl mb-[25px] leading-[111.9%] font-montserrat text-[#1a1818;] font-medium"
+          className=" text-[56px] mb-[25px] leading-[111.9%] font-montserrat text-[#1a1818;] font-medium xl:text-[56px]"
         >
           Hi, I’m Shadrack,
-          <span className=" font-semibold text-pryText"> Web Designer </span>and
-          <br />a
+          <span className=" font-semibold text-pryText"> Web Designer </span>
+          and a 
           <span className=" font-semibold text-pryText">
-            {" "}
             {text}
             <Cursor />
             Developer

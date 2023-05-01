@@ -1,12 +1,13 @@
 import Button from "@/components/Button";
 import Footer from "@/components/Footer";
+import Tags from "@/components/Tags";
 import { ProjectData } from "@/types";
 import Image from "next/image";
 
 const ProjectPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
   const projectRes = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/api/projects/${slug}?populate=projectImage,tags`
+    `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/api/projects/${slug}?populate=tags`
   );
   const { data: projectData }: { data: ProjectData } = await projectRes.json();
   const projectName = projectData.attributes.title;
@@ -14,6 +15,7 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
   const liveLink = projectData.attributes.link;
   const githubLink = projectData.attributes.github;
   const image = projectData.attributes.projectImageUrl;
+  const tags = projectData.attributes.tags.data;
 
   return (
     <div>
@@ -22,9 +24,14 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
           <span className=" inline-block font-mulish font-bold text-[14px] text-center text-[#969fa2] tracking-[0.2em] mb-[8px]">
             PROJECT SHOWCASE
           </span>
-          <h1 className=" text-center font-lato font-bold text-[56px] text-pryText mb-[20px]">
+          <h1 className=" text-center font-lato font-bold text-[56px] text-pryText mb-[5px]">
             {projectName}
           </h1>
+          <div className="ml-auto mr-auto flex gap-[16px] mb-[30px]">
+            {tags.map((tag) => (
+              <Tags key={tag.id} active={true} title={tag.attributes.title} />
+            ))}
+          </div>
           <p className=" font-mulish font-normal text-[18px] leading-[180%] text-center max-w-[736px] ml-auto mr-auto mb-[40px]">
             {projectDesc}
           </p>
@@ -50,7 +57,7 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
         <Image
           src={image}
           width={930}
-          height={0}
+          height={1000}
           alt="project"
           className="relative top-[-150px]"
         />

@@ -6,7 +6,7 @@ export const mulish = Mulish({
   weight: ["300", "400"],
 });
 export const montserrat = Montserrat({
-  subsets: ["vietnamese"],
+  subsets: ["cyrillic"],
   variable: "--font-montserrat",
   weight: ["500", "600", "700"],
 });
