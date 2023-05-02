@@ -11,7 +11,7 @@ interface ButtonProps {
 
 const Button = ({ type, value, link, samePage, projectPage }: ButtonProps) => {
   return !link ? (
-    <button className="group border border-black rounded-[5px] py-[10px] w-[200px] relative">
+    <button className="group border border-black rounded-[5px] py-[10px] w-[200px] inline-block text-center relative text-[13px] lg:text-[14px] xl:text-[16px]">
       <div
         className={`rounded-[5px] py-[10px] w-full h-full ${
           type === "pry" ? "bg-pryBtn" : "bg-secBtn"
@@ -22,7 +22,7 @@ const Button = ({ type, value, link, samePage, projectPage }: ButtonProps) => {
   ) : samePage ? (
     <a
       href={link}
-      className="group border border-black rounded-[5px] py-[10px] w-[200px] inline-block text-center relative"
+      className="group border border-black rounded-[5px] py-[10px] w-[200px] inline-block text-center relative text-[13px] lg:text-[14px] xl:text-[16px]"
     >
       <div
         className={`rounded-[5px] py-[10px] w-full h-full ${
@@ -35,7 +35,7 @@ const Button = ({ type, value, link, samePage, projectPage }: ButtonProps) => {
     <Link
       href={link}
       target={projectPage ? "_blank" : ""}
-      className="group border border-black rounded-[5px] py-[10px] w-[200px] inline-block text-center relative"
+      className="group border border-black rounded-[5px] py-[10px] w-[200px] inline-block text-center relative text-[13px] lg:text-[14px] xl:text-[16px]"
     >
       <div
         className={`rounded-[5px] py-[10px] w-full h-full ${

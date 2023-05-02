@@ -25,7 +25,7 @@ const Navbar = () => {
           </Link>
         </motion.div>
         <motion.div
-          className="flex gap-8"
+          className="flex gap-3 sm:gap-8"
           variants={parentVariant}
           initial="initial"
           animate="animate"

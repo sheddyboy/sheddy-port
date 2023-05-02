@@ -20,13 +20,13 @@ const Skills = () => {
     },
   };
   return (
-    <section className=" bg-secBg py-[150px]">
+    <section className=" bg-secBg pt-[50px] pb-[100px] md:pb-[150px] lg:pt-[150px] ">
       <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: "40px" }}
           whileInView={{ opacity: 1, y: "0px" }}
           viewport={{ once: true, margin: "-100px" }}
-          className=" text-center font-montserrat font-bold text-secText text-[50px] mb-[50px]"
+          className=" text-center font-montserrat font-bold text-secText text-[40px] md:text-[50px] mb-[50px]"
         >
           Languages And Tools
         </motion.h2>
@@ -35,7 +35,7 @@ const Skills = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.5 }}
-          className=" grid grid-cols-5 gap-[20px]"
+          className=" grid justify-items-center grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-[20px]"
         >
           <Card variants={childrenVariant} src="/html_logo.svg" />
           <Card variants={childrenVariant} src="/css_logo.svg" />

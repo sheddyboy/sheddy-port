@@ -12,7 +12,7 @@ const Tags = ({
 }) => {
   return (
     <button
-      className={`rounded-[5px] px-[12px] py-[6px] font-mulish font-bold text-[13px] ${
+      className={`rounded-[5px] px-[12px] py-[6px] font-mulish font-bold text-[10px] xl:text-[13px] ${
         active ? " bg-pryText text-white" : " bg-white text-pryText"
       }`}
       onClick={() => {

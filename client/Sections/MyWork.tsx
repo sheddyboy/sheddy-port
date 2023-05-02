@@ -43,13 +43,16 @@ const MyWork = ({
     }
   };
   return (
-    <section className=" bg-pryBg pt-[100px] py-[250px]" id="myWork">
+    <section
+      className=" bg-pryBg pt-[50px] md:pt-[100px] pb-[100px] md:pb-[250px]"
+      id="myWork"
+    >
       <div className="container flex flex-col">
         <motion.h3
           initial={{ opacity: 0, y: "50px" }}
           whileInView={{ opacity: 1, y: "0px" }}
           viewport={{ once: true, amount: 0.3 }}
-          className=" font-montserrat font-bold text-[56px] text-pryText mb-[20px] text-center"
+          className=" font-montserrat font-bold text-[40px] md:text-[56px] text-pryText mb-[20px] text-center"
         >
           My Work
         </motion.h3>
@@ -57,7 +60,7 @@ const MyWork = ({
           initial={{ opacity: 0, y: "50px" }}
           whileInView={{ opacity: 1, y: "0px", transition: { duration: 0.2 } }}
           viewport={{ once: true, amount: 0.5 }}
-          className=" flex gap-[10px] ml-auto mr-auto"
+          className=" flex flex-wrap justify-center gap-[10px] ml-auto mr-auto"
         >
           {tagFilters.map((tag) => (
             <Tags
@@ -70,7 +73,7 @@ const MyWork = ({
             />
           ))}
         </motion.div>
-        <div className=" flex flex-col gap-[200px] mt-[60px]">
+        <div className=" flex flex-col gap-[100px] lg:gap-[200px] mt-[60px]">
           {projectsFilter.map((project) => (
             <Project key={project.id} project={project} />
           ))}

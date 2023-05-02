@@ -31,13 +31,13 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
     <footer
       className={` ${
         type === "pry" ? "bg-pryBg" : "bg-secBg"
-      }  pt-[65px] pb-[20px] overflow-x-clip`}
+      }  pt-[65px] pb-[20px] overflow-x-clip overflow-y-clip lg:overflow-y-visible`}
       id="contact"
     >
       <div className="container">
         <div className="flex">
           <motion.div
-            className=" w-6/12"
+            className="w-full sm:w-8/12 lg:w-6/12"
             initial={{ opacity: 0, x: "-60px" }}
             whileInView={{
               opacity: 1,
@@ -47,19 +47,19 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <h2
-              className={` font-montserrat font-bold text-[50px] ${
+              className={` leading-none font-montserrat font-bold text-[40px] lg:text-[50px] ${
                 type === "pry" ? "text-pryText" : "text-secText"
-              }  mb-[14px]`}
+              }  mb-[18px] text-center sm:text-left`}
             >
               Want To Work?
             </h2>
-            <p className=" font-mulish font-normal text-[18px] mb-[34px]">
+            <p className=" font-mulish font-normal text-[14px] max-w-[400px] lg:max-w-none lg:text-[18px] mb-[30px] text-center sm:text-left">
               If you&apos;re looking for a professional, modern and functional
               website for your business or personal use, I&apos;m available for
               hire.
             </p>
             <h3
-              className={` font-montserrat font-bold text-[40px]  ${
+              className={` font-montserrat font-bold text-[30px] lg:text-[40px]  ${
                 type === "pry" ? "text-pryText" : "text-secText"
               } mb-[14px]`}
             >
@@ -79,7 +79,7 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
                 }
                 type="text"
                 placeholder="Name"
-                className="h-[56px] outline-none border border-[rgba(0, 0, 0, 0.3)] rounded-[5px] bg-transparent py-[8px] px-[16px] font-mulish font-normal placeholder-[rgba(0, 0, 0, 0.3)]"
+                className="col-span-2 md:col-span-1 h-[56px] outline-none border border-[rgba(0, 0, 0, 0.3)] rounded-[5px] bg-transparent py-[8px] px-[16px] font-mulish font-normal placeholder-[rgba(0, 0, 0, 0.3)]"
               />
               <input
                 value={formInputs.email}
@@ -92,7 +92,7 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
                 }
                 type="email"
                 placeholder="Email"
-                className="h-[56px] outline-none border border-[rgba(0, 0, 0, 0.3)] rounded-[5px] bg-transparent py-[8px] px-[16px] font-mulish font-normal placeholder-[rgba(0, 0, 0, 0.3)]"
+                className="col-span-2 md:col-span-1 h-[56px] outline-none border border-[rgba(0, 0, 0, 0.3)] rounded-[5px] bg-transparent py-[8px] px-[16px] font-mulish font-normal placeholder-[rgba(0, 0, 0, 0.3)]"
               />
               <input
                 value={formInputs.subject}
@@ -124,7 +124,7 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
             </form>
           </motion.div>
           <motion.div
-            className="w-6/12 relative"
+            className="w-4/12 lg:w-6/12 hidden sm:block relative"
             initial={{ opacity: 0, y: "50px" }}
             whileInView={{
               opacity: 1,
@@ -141,7 +141,7 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
               src="/footer.png"
               width={510}
               height={930}
-              className=" absolute left-[250px] top-[-240px]"
+              className=" absolute sm:w-[400px] max-w-none lg:max-w-full sm:left-[30px] md:left-[60px] lg:left-[250px]  sm:bottom-[-100px] md:bottom-[-250px]  lg:bottom-[-80px]"
             />
           </motion.div>
         </div>
