@@ -19,11 +19,9 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
         body: JSON.stringify(formInputs),
       });
       const data: { message: string } = await res.json();
-      // alert(data);
       console.log(data);
     } catch (err) {
       console.log(err);
-      // alert(err);
     }
     setFormInputs({ name: "", email: "", subject: "", message: "" });
   };
@@ -141,7 +139,7 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
               src="/footer.png"
               width={510}
               height={930}
-              className=" absolute sm:w-[400px] max-w-none lg:max-w-full sm:left-[30px] md:left-[60px] lg:left-[250px]  sm:bottom-[-100px] md:bottom-[-250px]  lg:bottom-[-80px]"
+              className=" absolute sm:w-[400px] md:w-[480px] max-w-none lg:max-w-full sm:left-[30px] md:left-[60px] lg:left-[250px]  sm:bottom-[-100px] md:bottom-[-250px]  lg:bottom-[-80px]"
             />
           </motion.div>
         </div>

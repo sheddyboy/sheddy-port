@@ -43,7 +43,7 @@ const Hero = () => {
             y: "0px",
             transition: { delay: 0.3, duration: 0.7 },
           }}
-          className=" text-center lg:text-left max-w-[700px] xl:max-w-none text-[36px] sm:text-[40px] md:text-[56px] lg:text-[40px] xl:text-[56px] mb-[10px] lg:mb-[18px] xl:mb-[25px] leading-[111.9%] font-montserrat text-[#1a1818;] font-medium "
+          className=" text-center lg:text-left max-w-[700px] xl:max-w-[950px] text-[36px] sm:text-[40px] md:text-[56px] lg:text-[40px] xl:text-[56px] mb-[10px] lg:mb-[18px] xl:mb-[25px] leading-[111.9%] font-montserrat text-[#1a1818;] font-medium "
         >
           Hi, I’m Shadrack,
           <span className=" font-semibold text-pryText"> Web Designer </span>
