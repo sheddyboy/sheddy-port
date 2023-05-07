@@ -19,12 +19,12 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <div>
-      <section className=" bg-pryBg pt-[165px] pb-[230px]">
+      <section className=" bg-pryBg pt-[120px] md:pt-[165px] pb-[230px]">
         <div className="container flex flex-col">
           <span className=" inline-block font-mulish font-bold text-[14px] text-center text-[#969fa2] tracking-[0.2em] mb-[8px]">
             PROJECT SHOWCASE
           </span>
-          <h1 className=" text-center font-lato font-bold text-[56px] text-pryText mb-[5px]">
+          <h1 className=" text-center font-lato font-bold text-[40px] md:text-[56px] text-pryText mb-[25px] leading-[100%]">
             {projectName}
           </h1>
           <div className="ml-auto mr-auto flex gap-[16px] mb-[30px]">
@@ -32,7 +32,7 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
               <Tags key={tag.id} active={true} title={tag.attributes.title} />
             ))}
           </div>
-          <p className=" font-mulish font-normal text-[18px] leading-[180%] text-center max-w-[736px] ml-auto mr-auto mb-[40px]">
+          <p className=" font-mulish font-normal text-[16px] md:text-[18px] leading-[180%] text-center max-w-[736px] ml-auto mr-auto mb-[40px]">
             {projectDesc}
           </p>
           <div className="flex justify-center gap-[20px]">
@@ -53,7 +53,7 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
           </div>
         </div>
       </section>
-      <section className=" bg-secBg flex justify-center pb-[100px] ">
+      <section className=" bg-secBg flex justify-center pb-0 md:pb-[100px] px-[20px]">
         <Image
           src={image}
           width={930}

@@ -5,8 +5,10 @@ import Tags from "./Tags";
 import Button from "./Button";
 import { ProjectData } from "@/types";
 import { motion } from "framer-motion";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const Project = ({ project }: { project: ProjectData }) => {
+  const mobileAndTabs = useMediaQuery("(max-width: 768px)");
   const title = project.attributes.title;
   const desc = project.attributes.desc;
   const thumbnail = project.attributes.thumbnailUrl;
@@ -24,7 +26,11 @@ const Project = ({ project }: { project: ProjectData }) => {
     <div className=" flex flex-col gap-y-12 items-center justify-between lg:flex-row">
       <motion.div
         initial={{ opacity: 0, x: "-70px" }}
-        whileInView={{ opacity: 1, x: "0px", transition: { duration: 0.7 } }}
+        whileInView={{
+          opacity: 1,
+          x: "0px",
+          transition: { duration: mobileAndTabs ? 0.4 : 0.7 },
+        }}
         viewport={{ once: true, amount: 0.3 }}
         className=" lg:w-1/2 flex flex-col items-center  lg:items-start "
       >
@@ -46,7 +52,11 @@ const Project = ({ project }: { project: ProjectData }) => {
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: "70px" }}
-        whileInView={{ opacity: 1, y: "0px", transition: { duration: 0.8 } }}
+        whileInView={{
+          opacity: 1,
+          y: "0px",
+          transition: { duration: mobileAndTabs ? 0.4 : 0.8 },
+        }}
         viewport={{ once: true, amount: 0.5 }}
         className="lg:w-1/2"
       >

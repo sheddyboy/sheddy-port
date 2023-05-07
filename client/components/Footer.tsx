@@ -3,8 +3,10 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Button from "./Button";
 import { motion } from "framer-motion";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const Footer = ({ type }: { type: "pry" | "sec" }) => {
+  const mobileAndTabs = useMediaQuery("(max-width: 768px)");
   const [formInputs, setFormInputs] = useState({
     name: "",
     email: "",
@@ -40,7 +42,7 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
             whileInView={{
               opacity: 1,
               x: "0px",
-              transition: { duration: 0.7 },
+              transition: { duration: mobileAndTabs ? 0.4 : 0.7 },
             }}
             viewport={{ once: true, amount: 0.3 }}
           >
@@ -128,7 +130,7 @@ const Footer = ({ type }: { type: "pry" | "sec" }) => {
               opacity: 1,
               y: ["-5px", "5px", "-5px"],
               transition: {
-                duration: 0.7,
+                duration: mobileAndTabs ? 0.4 : 0.7,
                 y: { repeat: Infinity, duration: 8, ease: "easeInOut" },
               },
             }}
