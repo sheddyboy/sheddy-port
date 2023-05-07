@@ -48,7 +48,7 @@ const Hero = () => {
           Hi, I’m Shadrack,
           <span className=" font-semibold text-pryText"> Web Designer </span>
           and <span className=" block lg:inline"></span>
-          <span className=" font-semibold text-pryText ">
+          <span className=" font-semibold text-pryText whitespace-nowrap">
             {text}
             <Cursor /> 
           </span>
