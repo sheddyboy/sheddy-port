@@ -23,6 +23,9 @@ module.exports = {
         sacramento: ["var(--font-sacramento)"],
         cabin: ["var(--font-cabin)"],
       },
+      screens: {
+        vs: "470px",
+      },
     },
   },
   plugins: [],

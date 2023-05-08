@@ -1,17 +1,19 @@
 "use client";
 import Button from "@/components/Button";
+import useMediaQuery from "@/hooks/useMediaQuery";
 import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 const Hero = () => {
+  const mobile = useMediaQuery("(max-width: 450px)");
   const [text, helper] = useTypewriter({
     words: [
-      "Frontend Developer",
-      "React Developer",
-      "MERN Developer",
-      "Webflow Developer",
+      `Frontend ${mobile ? "Dev" : "Developer"}`,
+      `React ${mobile ? "Dev" : "Developer"}`,
+      `MERN ${mobile ? "Dev" : "Developer"}`,
+      `Webflow ${mobile ? "Dev" : "Developer"}`,
     ],
     loop: true,
     typeSpeed: 50,
@@ -48,9 +50,10 @@ const Hero = () => {
           Hi, I’m Shadrack,
           <span className=" font-semibold text-pryText"> Web Designer </span>
           and <span className=" block lg:inline"></span>
-          <span className=" font-semibold text-pryText whitespace-nowrap">
+          <span className=" font-semibold text-pryText">
             {text}
-            <Cursor /> 
+            <Cursor />
+            {mobile ? "" : " "}
           </span>
         </motion.h1>
         <div className="flex flex-col lg:flex-row">
@@ -95,7 +98,7 @@ const Hero = () => {
           </div>
           <div className=" lg:w-5/12 relative ">
             <motion.div
-              className="relative left-[70px] lg:absolute  lg:top-[-160px] lg:left-[-220px]"
+              className="relative vs:left-[60px]  sm:left-[70px] lg:absolute  lg:top-[-160px] lg:left-[-220px]"
               initial={{ opacity: 0, scale: 0 }}
               animate={{
                 opacity: 1,
@@ -109,7 +112,7 @@ const Hero = () => {
               }}
             >
               <Image
-                className=" lg:min-w-[900px] xl:min-w-[1000px]"
+                className="min-w-[400px] lg:min-w-[900px] xl:min-w-[1000px]"
                 src="/hero.png"
                 alt="hero"
                 width={1000}
