@@ -1,7 +1,7 @@
 import Button from "@/components/Button";
 import Footer from "@/components/Footer";
 import Tags from "@/components/Tags";
-import { ProjectData } from "@/types";
+import { ProjectData, ProjectResponse } from "@/types";
 import Image from "next/image";
 
 const ProjectPage = async ({ params }: { params: { slug: string } }) => {
@@ -68,3 +68,13 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
 };
 
 export default ProjectPage;
+
+export async function generateStaticParams() {
+  const projectsRes = await fetch(
+    `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/api/projects?populate=*&sort=createdAt:desc`,
+    { next: { revalidate: 60 } }
+  );
+  const { data: projectsData }: ProjectResponse = await projectsRes.json();
+
+  return projectsData.map((project) => ({ slug: project.attributes.slug }));
+}
