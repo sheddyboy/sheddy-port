@@ -71,8 +71,7 @@ export default ProjectPage;
 
 export async function generateStaticParams() {
   const projectsRes = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/api/projects?populate=*&sort=createdAt:desc`,
-    { next: { revalidate: 60 } }
+    `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/api/projects?populate=*&sort=createdAt:desc`
   );
   const { data: projectsData }: ProjectResponse = await projectsRes.json();
 
