@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { cabin, lato, montserrat, mulish, sacramento } from "./fonts";
-import Footer from "@/components/Footer";
 export const metadata = {
   title: "Sheddy Port",
   description: "Sheddy's portfolio",
