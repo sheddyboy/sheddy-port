@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { cabin, lato, montserrat, mulish, sacramento } from "./fonts";
+import { Provider } from "@/components/Provider";
 export const metadata = {
   title: "Sheddy Port",
   description: "Sheddy's portfolio",
@@ -16,10 +17,12 @@ export default async function RootLayout({
       lang="en"
       className={`${mulish.variable} ${lato.variable} ${montserrat.variable} ${sacramento.variable} ${cabin.variable}`}
     >
-      <body>
-        <Navbar />
-        {children}
-      </body>
+      <Provider>
+        <body>
+          <Navbar />
+          {children}
+        </body>
+      </Provider>
     </html>
   );
 }
